@@ -1,0 +1,10 @@
+# Failed Login Alert — Suspicious Network Login
+# Detects successful login after brute force (EventCode 4624 Logon_Type=3)
+# MITRE ATT&CK: T1021.002 — Remote Services: SMB/Windows Admin Shares
+
+index=main sourcetype="WinEventLog:Security" EventCode=4624
+| eval Logon_Type=mvindex(split(coalesce(Logon_Type,"0"),","),0)
+| where Logon_Type="3"
+| stats count by Account_Name, host, src_ip
+| sort -count
+| rename Account_Name as "Account", host as "Target Host", src_ip as "Source IP", count as "Network Logins"
