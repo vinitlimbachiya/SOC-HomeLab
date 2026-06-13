@@ -3,7 +3,7 @@
 > **Built by:** Vinit Limbachiya  
 > **Role Target:** SOC Analyst  
 > **Duration:** 5 Days  
-> **Environment:** VMWare Workstation Pro (Local) | Remote-Ready Documentation
+> **Environment:** VMware Workstation Pro (Local) | Remote-Ready Documentation
 
 ---
 
@@ -13,7 +13,7 @@ This project simulates a real-world **Security Operations Center (SOC)** environ
 
 **Key skills demonstrated:**
 - SIEM deployment and log analysis (Splunk)
-- Attack simulation using Kali Linux, Nmap, Metasploit, Burp Suite
+- Attack simulation using Kali Linux, Nmap, Metasploit, Hydra
 - Threat detection, alerting, and correlation rules
 - Incident Response (IR) documentation
 - Network traffic monitoring and analysis
@@ -27,11 +27,11 @@ Internet
     │
 [pfSense Firewall] ── Network monitor, traffic filtering
     │
-    ├── [Kali Linux VM]       → Attacker machine (192.168.56.10)
-    ├── [Ubuntu Server VM]    → Target/Victim machine (192.168.56.20)
-    └── [Splunk VM]           → SIEM / Log collector (192.168.56.30)
+    ├── [Kali Linux VM]       → Attacker machine (192.168.136.129)
+    ├── [Windows Server VM]    → Target/Victim machine (192.168.136.131)
+    └── [Splunk VM]           → SIEM / Log collector (192.168.136.132)
 
-Network: VMWare Workstation Pro Host-Only Adapter — 192.168.56.0/24
+Network: VMware Workstation Pro Host-Only Adapter — 192.168.136.0/24
 ```
 
 ---
@@ -42,7 +42,7 @@ Network: VMWare Workstation Pro Host-Only Adapter — 192.168.56.0/24
 |---|---|
 | Virtualization | VMWare 7.x |
 | Attacker OS | Kali Linux 2024 |
-| Target OS | Ubuntu Server 22.04 LTS |
+| Target OS | Windows Server 22.04 LTS |
 | Firewall | pfSense 2.7 |
 | SIEM | Splunk Free (Universal Forwarder) |
 | Attack Tools | Nmap, Metasploit, Hydra |
@@ -163,7 +163,7 @@ SOC-HomeLab/
 
 ## 📄 Sample Incident Report
 
-See full report: [📄 View Full IR Report](./reports/IR_Report_001.md)
+See full report: [📄View Full IR Report](./reports/IR_Report_001.md)
 
 ---
 
