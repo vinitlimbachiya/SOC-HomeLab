@@ -163,7 +163,7 @@ SOC-HomeLab/
 
 ## 📄 Sample Incident Report
 
-See full report: [`/reports/IR_Report_001.md`(./reports/IR_Report_001.md)
+See full report: [📄 View Full IR Report](./reports/IR_Report_001.md)
 
 ---
 
