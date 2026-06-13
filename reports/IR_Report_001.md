@@ -30,10 +30,10 @@ Three simulated cyber attacks were conducted against a controlled Windows Server
 | VM | OS | Role | IP Address |
 |---|---|---|---|
 | Kali Linux | Kali Linux 2024 | Attacker | 192.168.136.129 |
-| Windows Server | Windows Server 2012 R2 | Target / Victim | 192.168.131.136 |
+| Windows Server | Windows Server 2012 R2 | Target / Victim | 192.168.136.131 |
 | Ubuntu (Splunk) | Ubuntu Server 22.04 | SIEM | 192.168.136.132 |
 
-**Network:** VMware Workstation Pro — VMnet8 (NAT)
+**Network:** VMware Workstation Pro — HostOnly
 
 ---
 
@@ -41,7 +41,7 @@ Three simulated cyber attacks were conducted against a controlled Windows Server
 
 | Time | Phase | Activity |
 |---|---|---|
-| 06:00 AM | Reconnaissance | Nmap full port scan from 192.168.136.129 → 192.168.131.136 |
+| 06:00 AM | Reconnaissance | Nmap full port scan from 192.168.136.129 → 192.168.136.131 |
 | 07:10 AM | Credential Attack | Hydra SMB brute force — 10 password attempts on port 445 |
 | 07:19 AM | Detection | Splunk detected 10x EventCode 4625 — Brute Force alert triggered |
 | 07:44 AM | Exploitation | Metasploit psexec successful — Meterpreter session opened |
@@ -53,12 +53,12 @@ Three simulated cyber attacks were conducted against a controlled Windows Server
 ## 4. Attack Details
 
 ### 4.1 Nmap Reconnaissance
-- **Command:** `nmap -sV -p- 192.168.131.136`
+- **Command:** `nmap -sV -p- 192.168.136.131`
 - **Open Port:** 5985/tcp — Microsoft HTTPAPI (WinRM)
 - **MITRE ATT&CK:** T1046 — Network Service Discovery
 
 ### 4.2 Hydra SMB Brute Force
-- **Command:** `hydra -l Administrator -P passlist.txt smb://192.168.131.136 -v -I`
+- **Command:** `hydra -l Administrator -P passlist.txt smb://192.168.136.131 -v -I`
 - **Attempts:** 10 password attempts on port 445
 - **Result:** 0 valid passwords (password not in wordlist)
 - **Splunk Detection:** 10x EventCode 4625
