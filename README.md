@@ -2,8 +2,8 @@
 
 > **Built by:** Vinit Limbachiya  
 > **Role Target:** SOC Analyst  
-> **Duration:** 5 Weeks  
-> **Environment:** VirtualBox (Local) | Remote-Ready Documentation
+> **Duration:** 5 Days  
+> **Environment:** VMWare Workstation Pro (Local) | Remote-Ready Documentation
 
 ---
 
@@ -31,7 +31,7 @@ Internet
     ├── [Ubuntu Server VM]    → Target/Victim machine (192.168.56.20)
     └── [Splunk VM]           → SIEM / Log collector (192.168.56.30)
 
-Network: VirtualBox Host-Only Adapter — 192.168.56.0/24
+Network: VMWare Workstation Pro Host-Only Adapter — 192.168.56.0/24
 ```
 
 ---
@@ -40,12 +40,12 @@ Network: VirtualBox Host-Only Adapter — 192.168.56.0/24
 
 | Category | Tools Used |
 |---|---|
-| Virtualization | VirtualBox 7.x |
+| Virtualization | VMWare 7.x |
 | Attacker OS | Kali Linux 2024 |
 | Target OS | Ubuntu Server 22.04 LTS |
 | Firewall | pfSense 2.7 |
 | SIEM | Splunk Free (Universal Forwarder) |
-| Attack Tools | Nmap, Metasploit, Burp Suite, Hydra |
+| Attack Tools | Nmap, Metasploit, Hydra |
 | Monitoring | Splunk dashboards, pfSense logs |
 | Documentation | Markdown, Incident Report Template |
 
@@ -53,7 +53,7 @@ Network: VirtualBox Host-Only Adapter — 192.168.56.0/24
 
 ## 📋 Phase Breakdown
 
-### ✅ Phase 1 — Environment Setup (Week 1)
+### ✅ Phase 1 — Environment Setup (Day 1)
 - Installed VirtualBox and configured 3 VMs on isolated Host-Only network
 - Set up Kali Linux as attacker, Ubuntu Server as target, Splunk VM as SIEM
 - Configured pfSense firewall for network segmentation and traffic logging
@@ -63,7 +63,7 @@ Network: VirtualBox Host-Only Adapter — 192.168.56.0/24
 
 ---
 
-### ✅ Phase 2 — Splunk SIEM Deployment (Week 2)
+### ✅ Phase 2 — Splunk SIEM Deployment (Day 2)
 - Installed Splunk Free on dedicated VM
 - Installed Universal Forwarder on Ubuntu target to ship logs to Splunk
 - Created custom dashboards for: failed logins, port scans, SSH attempts
@@ -81,7 +81,7 @@ index=main sourcetype=syslog
 
 ---
 
-### ✅ Phase 3 — Attack Simulation (Week 3)
+### ✅ Phase 3 — Attack Simulation (Day 3)
 Simulated the following attacks from Kali Linux against Ubuntu target:
 
 | Attack Type | Tool Used | Purpose |
@@ -89,14 +89,13 @@ Simulated the following attacks from Kali Linux against Ubuntu target:
 | Network reconnaissance | Nmap | Port and service discovery |
 | Vulnerability scan | Nmap NSE scripts | CVE identification |
 | Exploitation | Metasploit | Gaining shell access |
-| Web app attacks | Burp Suite + DVWA | SQLi, XSS, CSRF testing |
 | Brute force SSH | Hydra | Password attack simulation |
 
 **Screenshot:** `screenshots/phase3_attack_simulation.png`
 
 ---
 
-### ✅ Phase 4 — Threat Detection & Incident Response (Week 4)
+### ✅ Phase 4 — Threat Detection & Incident Response (Day 4)
 - Configured Splunk alerts triggered by attack signatures detected in logs
 - Performed log correlation to map attack timeline
 - Wrote a full **Incident Response Report** (see `/reports/IR_Report_001.md`)
@@ -104,8 +103,8 @@ Simulated the following attacks from Kali Linux against Ubuntu target:
 
 **IR Report Summary:**
 ```
-Incident ID  : IR-2025-001
-Date         : [Date]
+Incident ID  : IR-2026-001
+Date         : 8-06-2026
 Severity     : High
 Type         : Unauthorized port scan + brute force attempt
 Source IP    : 192.168.56.10 (Kali VM)
@@ -118,7 +117,7 @@ Action Taken : IP blocked via pfSense, SSH hardened
 
 ---
 
-### ✅ Phase 5 — Documentation & Reporting (Week 5)
+### ✅ Phase 5 — Documentation & Reporting (Day 5)
 - Documented all findings in structured Incident Reports
 - Created this README for GitHub publication
 - Added project to resume under **Projects** section
@@ -164,13 +163,13 @@ SOC-HomeLab/
 
 ## 📄 Sample Incident Report
 
-See full report: [`/reports/IR_Report_001.md`](./reports/IR_Report_001.md)
+See full report: [`/reports/IR_Report_001.md`(./reports/IR_Report_001.md)
 
 ---
 
 ## 🚀 How to Replicate This Lab
 
-1. Install VirtualBox (virtualbox.org)
+1. Install VMWare (https://knowledge.broadcom.com/external/article/368667/download-and-license-vmware-desktop-hype.html)
 2. Download Kali Linux OVA (kali.org/get-kali → Virtual Machines)
 3. Download Ubuntu Server 22.04 ISO (ubuntu.com)
 4. Download Splunk Free (splunk.com/en_us/download.html)
@@ -182,7 +181,7 @@ See full report: [`/reports/IR_Report_001.md`](./reports/IR_Report_001.md)
 ## 👤 About Me
 
 **Vinit Limbachiya**  
-Cybersecurity enthusiast | Security Researcher on HackerOne | SOC Analyst Intern aspirant  
+Cybersecurity enthusiast | Security Researcher on HackerOne | SOC Analyst 
 
 - 📧 vinitlimbachiya01@gmail.com  
 - 🔗 [LinkedIn](https://linkedin.com/in/vinitlimbachiya)  
