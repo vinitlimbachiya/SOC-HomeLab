@@ -107,8 +107,8 @@ Incident ID  : IR-2026-001
 Date         : 8-06-2026
 Severity     : High
 Type         : Unauthorized port scan + brute force attempt
-Source IP    : 192.168.56.10 (Kali VM)
-Target IP    : 192.168.56.20 (Ubuntu VM)
+Source IP    : 192.168.136.129 (Kali VM)
+Target IP    : 192.168.136.131 (Ubuntu VM)
 Detection    : Splunk alert — SSH brute force rule triggered
 Action Taken : IP blocked via pfSense, SSH hardened
 ```
