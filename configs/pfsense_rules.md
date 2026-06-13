@@ -18,7 +18,7 @@ Internet
     │
 VMnet8 (192.168.136.0/24)
     ├── Kali Linux      192.168.136.129  (Attacker)
-    ├── Windows Server  192.168.131.136  (Victim)
+    ├── Windows Server  192.168.136.131  (Victim)
     └── Splunk SIEM     192.168.136.132  (Monitor)
 ```
 
@@ -30,8 +30,8 @@ VMnet8 (192.168.136.0/24)
 |---|---|---|---|---|---|
 | Allow Splunk UI | TCP | Any | 192.168.136.132 | 8000 | Allow |
 | Allow Splunk Forwarder | TCP | Any | 192.168.136.132 | 9997 | Allow |
-| Allow RDP | TCP | Kali (136.129) | WinServer (131.136) | 3389 | Allow |
-| Allow SMB | TCP | Kali (136.129) | WinServer (131.136) | 445 | Allow |
+| Allow RDP | TCP | Kali (136.129) | WinServer (136.131) | 3389 | Allow |
+| Allow SMB | TCP | Kali (136.129) | WinServer (136.131) | 445 | Allow |
 | Allow ICMP | ICMP | Any | Any | — | Allow |
 | Block All Others | Any | Any | Any | Any | Block |
 
@@ -43,8 +43,8 @@ After Metasploit attack detected — these rules were added:
 
 | Rule | Protocol | Source | Destination | Port | Action |
 |---|---|---|---|---|---|
-| Block SMB from Kali | TCP | 192.168.136.129 | 192.168.131.136 | 445 | Block |
-| Block RDP from Kali | TCP | 192.168.136.129 | 192.168.131.136 | 3389 | Block |
+| Block SMB from Kali | TCP | 192.168.136.129 | 192.168.136.131 | 445 | Block |
+| Block RDP from Kali | TCP | 192.168.136.129 | 192.168.136.131 | 3389 | Block |
 
 ---
 
