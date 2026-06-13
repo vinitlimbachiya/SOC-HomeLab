@@ -1,0 +1,10 @@
+# Port Scan Detection — Nmap
+# Detects multiple connection attempts from single source IP
+# MITRE ATT&CK: T1046 — Network Service Discovery
+
+index=main sourcetype="WinEventLog:Security"
+| stats count by src_ip, dest_port
+| where count > 20
+| sort -count
+| rename src_ip as "Source IP", dest_port as "Destination Port", count as "Connection Count"
+
