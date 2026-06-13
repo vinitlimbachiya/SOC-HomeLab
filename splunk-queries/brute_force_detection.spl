@@ -1,0 +1,9 @@
+# Brute Force Detection — Hydra SMB
+# Detects multiple failed login attempts (EventCode 4625)
+# MITRE ATT&CK: T1110.001 — Brute Force: Password Guessing
+
+index=main sourcetype="WinEventLog:Security" EventCode=4625
+| stats count by Account_Name, host
+| where count > 5
+| sort -count
+| rename Account_Name as "Targeted Account", host as "Target Host", count as "Failed Attempts"
