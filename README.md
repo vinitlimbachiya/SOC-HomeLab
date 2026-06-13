@@ -42,7 +42,7 @@ Network: VMware Workstation Pro Host-Only Adapter — 192.168.136.0/24
 |---|---|
 | Virtualization | VMWare 7.x |
 | Attacker OS | Kali Linux 2024 |
-| Target OS | Windows Server 22.04 LTS |
+| Target OS | Windows Server 2012 |
 | Firewall | pfSense 2.7 |
 | SIEM | Splunk Free (Universal Forwarder) |
 | Attack Tools | Nmap, Metasploit, Hydra |
@@ -108,7 +108,7 @@ Date         : 8-06-2026
 Severity     : High
 Type         : Unauthorized port scan + brute force attempt
 Source IP    : 192.168.136.129 (Kali VM)
-Target IP    : 192.168.136.131 (Ubuntu VM)
+Target IP    : 192.168.136.131 (Windows Server VM)
 Detection    : Splunk alert — SSH brute force rule triggered
 Action Taken : IP blocked via pfSense, SSH hardened
 ```
