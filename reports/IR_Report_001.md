@@ -107,7 +107,7 @@ Three simulated cyber attacks were conducted against a controlled Windows Server
 
 | # | Recommendation | Priority |
 |---|---|---|
-| 1 | Disable SMB (Port 445) if not required | CRITICAL |
+| 1 | Disable SMB (Port 445) | CRITICAL |
 | 2 | Implement Account Lockout after 5 failed attempts | HIGH |
 | 3 | Enable MFA for Administrator account | HIGH |
 | 4 | Rename default Administrator account | MEDIUM |
